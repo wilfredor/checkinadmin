@@ -1,0 +1,5 @@
+[Data]
+server=localhost
+database=checkinadmin
+login=root
+pass=1234

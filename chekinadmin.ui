@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>chekinadmin</class>
+ <widget class="QMainWindow" name="chekinadmin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>610</width>
+    <height>430</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>chekinadmin</string>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>601</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Checkin">
+     <attribute name="title">
+      <string>Checkin</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>581</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Persona responsable</string>
+      </property>
+      <widget class="QLineEdit" name="nombrelineEdit">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>60</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>50</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nombre(s):</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Apellido(s):</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="apellidolineEdit">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>90</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>50</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>30</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Cedula:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="cedulalineEdit">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>30</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>10</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>130</y>
+         <width>151</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Guardar responsable</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="limpiarPpushButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>130</y>
+         <width>92</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Limpiar</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="errorCedula">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>30</y>
+         <width>171</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ToolTipText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ToolTipText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>171</green>
+             <blue>169</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="ToolTipText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>170</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="text">
+        <string>*La Cedula es requerida</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="equipogroupBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>581</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Equipo</string>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Serial:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tipo:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Marca:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="seriallineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>20</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>50</number>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="tipocomboBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>50</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <property name="maxCount">
+        <number>50</number>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="marcalineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>80</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>50</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="addButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>110</y>
+         <width>121</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Agregar equipo</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="limpiarLpushButton">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>110</y>
+         <width>92</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Limpiar</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="modelolineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>20</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>50</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>20</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Modelo:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Checkout">
+     <attribute name="title">
+      <string>Checkout</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>571</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Persona responsable</string>
+      </property>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>30</y>
+         <width>60</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Cedula:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="cedulaBlineEdit">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="nombrelabel">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>211</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="apellidolabel">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>60</y>
+         <width>211</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>571</width>
+        <height>192</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>610</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCheckinadmin">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionConfiguraci_n"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAcerca_de_checkinadmin"/>
+   </widget>
+   <addaction name="menuCheckinadmin"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_checkinadmin">
+   <property name="text">
+    <string>Acerca de checkinadmin...</string>
+   </property>
+  </action>
+  <action name="actionConfiguraci_n">
+   <property name="text">
+    <string>Configuración...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>cedulalineEdit</tabstop>
+  <tabstop>nombrelineEdit</tabstop>
+  <tabstop>apellidolineEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>seriallineEdit</tabstop>
+  <tabstop>tipocomboBox</tabstop>
+  <tabstop>marcalineEdit</tabstop>
+  <tabstop>addButton</tabstop>
+  <tabstop>cedulaBlineEdit</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
