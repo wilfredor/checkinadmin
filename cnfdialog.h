@@ -12,7 +12,7 @@ class cnfDialog : public QDialog
     Q_OBJECT
     
 public:
-    explicit cnfDialog(QWidget *parent = 0);
+    explicit cnfDialog(QWidget *parent = nullptr);
     ~cnfDialog();
     
 /*

@@ -2,9 +2,16 @@
 #include "dbConection.h"
 #include "ui_chekinadmin.h"
 #include <QDebug>
+#include <QColor>
+#include <QDialog>
+#include <QMessageBox>
 #include <QPalette>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <QSqlTableModel>
 #include <QStandardItem>
+#include <QStyle>
+#include <QValidator>
 #include "checkablesortfilterproxymodel.h"
 #include "cnfdialog.h"
 #include "ui_cnfdialog.h"
@@ -18,7 +25,7 @@ CheckableSortFilterProxyModel::CheckableSortFilterProxyModel(QObject *parent) :
 void CheckableSortFilterProxyModel::setParameters(QList<int> boolCols) {
     booleanSet.clear();
     if (!boolCols.isEmpty()) {
-        foreach(int column , boolCols)
+        for (const int column : boolCols)
         {
             booleanSet.append(column);
         }
@@ -70,23 +77,23 @@ chekinadmin::chekinadmin(QWidget *parent) :
 {
     if (createConnection())
     {
-    ui->setupUi(this);
-    ui->tipocomboBox->addItem("Laptop");
-    ui->tipocomboBox->addItem("PC");
-    ui->tipocomboBox->addItem("Camara");
-    ui->tipocomboBox->addItem("Celular");
-    ui->tipocomboBox->addItem("Video Bean");
-    ui->tipocomboBox->addItem("Case");
-    ui->tipocomboBox->addItem("Mouse");
-    ui->tipocomboBox->addItem("Teclado");
-    ui->tipocomboBox->addItem("Regleta");
-    ui->apellidolabel->hide();
-    ui->nombrelabel->hide();
-    ui->errorCedula->hide();
-    QValidator *validator = new QIntValidator(0, 999999999, this);
-    ui->cedulaBlineEdit->setValidator(validator);
-    ui->cedulalineEdit->setValidator(validator);
-}
+        ui->setupUi(this);
+        ui->tipocomboBox->addItem("Laptop");
+        ui->tipocomboBox->addItem("PC");
+        ui->tipocomboBox->addItem("Camara");
+        ui->tipocomboBox->addItem("Celular");
+        ui->tipocomboBox->addItem("Video Bean");
+        ui->tipocomboBox->addItem("Case");
+        ui->tipocomboBox->addItem("Mouse");
+        ui->tipocomboBox->addItem("Teclado");
+        ui->tipocomboBox->addItem("Regleta");
+        ui->apellidolabel->hide();
+        ui->nombrelabel->hide();
+        ui->errorCedula->hide();
+        QValidator *validator = new QIntValidator(0, 999999999, this);
+        ui->cedulaBlineEdit->setValidator(validator);
+        ui->cedulalineEdit->setValidator(validator);
+    }
 }
 
 chekinadmin::~chekinadmin()

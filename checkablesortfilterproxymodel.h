@@ -7,7 +7,7 @@ class CheckableSortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
-    explicit CheckableSortFilterProxyModel(QObject *parent = 0);
+    explicit CheckableSortFilterProxyModel(QObject *parent = nullptr);
 
     void setParameters(QList<int> boolCols);
  protected:

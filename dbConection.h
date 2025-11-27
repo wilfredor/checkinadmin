@@ -1,14 +1,13 @@
 #ifndef DBCONNECTION_H
 #define DBCONNECTION_H
 
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QtGui/QApplication>
+#include <QApplication>
+#include <QDir>
+#include <QFile>
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlError>
-#include <QFile>
-#include <QDir>
+#include <QSqlQuery>
 #include <QDebug>
 #include "settings.h"
 

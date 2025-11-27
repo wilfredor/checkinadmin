@@ -10,7 +10,7 @@ namespace Ui {
 class chekinadmin : public QMainWindow {
     Q_OBJECT
 public:
-    chekinadmin(QWidget *parent = 0);
+    chekinadmin(QWidget *parent = nullptr);
     ~chekinadmin();
 
 protected:
