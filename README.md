@@ -37,7 +37,11 @@ Database configuration
 Database schema
 - A ready-to-run MySQL/MariaDB schema is in `schema.sql`.
 - Apply it with: `mysql -u<user> -p checkinadmin < schema.sql`
-- It creates the tables `users`, `items`, and `events` matching the app logic.
+- Tables:
+  - `users(user_id, first_name, last_name)`
+  - `items(serial, item_type, brand, model, checked_out, user_id FK -> users.user_id)`
+  - `events(description, timestamp)`
+- The app will also auto-create these tables at startup if they are missing, but `schema.sql` is recommended for a clean setup (includes FK/indexes).
 
 QMYSQL plugin from release (macOS)
 - Download asset `libqsqlmysql-macos-qt6.9.3.zip` from release v1.0.0.
