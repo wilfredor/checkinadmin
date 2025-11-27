@@ -186,7 +186,7 @@ void chekinadmin::on_actionAcerca_de_checkinadmin_triggered()
 void chekinadmin::on_cedulaBlineEdit_returnPressed()
 {
 
-   QSqlTableModel *m = new QSqlTableModel();
+   QSqlTableModel *m = new QSqlTableModel(this);
         m->setTable("items");
         m->setFilter("user_id="+ui->cedulaBlineEdit->text());
         m->setEditStrategy(QSqlTableModel::OnFieldChange);
@@ -203,8 +203,10 @@ void chekinadmin::on_cedulaBlineEdit_returnPressed()
         qDebug() << m->query().lastError();
 
 
-        QSqlQuery query("SELECT first_name,last_name FROM users where user_id="+ui->cedulaBlineEdit->text());
-        if (query.next())
+        QSqlQuery query;
+        query.prepare("SELECT first_name,last_name FROM users WHERE user_id=:user_id");
+        query.bindValue(":user_id", ui->cedulaBlineEdit->text());
+        if (query.exec() && query.next())
         {
             ui->nombrelabel->setText("First name: "+ query.value(0).toString());
             ui->apellidolabel->setText("Last name: "+ query.value(1).toString());
@@ -218,8 +220,10 @@ void chekinadmin::on_cedulaBlineEdit_returnPressed()
 void chekinadmin::on_cedulalineEdit_returnPressed()
 {
 
-        QSqlQuery query("SELECT first_name,last_name FROM users where user_id="+ui->cedulalineEdit->text());
-        if (query.next())
+        QSqlQuery query;
+        query.prepare("SELECT first_name,last_name FROM users WHERE user_id=:user_id");
+        query.bindValue(":user_id", ui->cedulalineEdit->text());
+        if (query.exec() && query.next())
         {
             ui->nombrelineEdit->setText(query.value(0).toString());
             ui->apellidolineEdit->setText(query.value(1).toString());
@@ -259,7 +263,7 @@ void chekinadmin::on_limpiarPpushButton_clicked()
 void chekinadmin::on_limpiarLpushButton_clicked()
 {
     ui->seriallineEdit->clear();
-    ui->tipocomboBox->clear();
+    ui->tipocomboBox->setCurrentIndex(-1);
     ui->marcalineEdit->clear();
 }
 
