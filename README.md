@@ -34,6 +34,11 @@ Database configuration
   ```
 - These values can also be edited from the app menu “Configuracion”.
 
+Database schema
+- A ready-to-run MySQL/MariaDB schema is in `schema.sql`.
+- Apply it with: `mysql -u<user> -p checkinadmin < schema.sql`
+- It creates the tables `users`, `items`, and `events` matching the app logic.
+
 QMYSQL plugin from release (macOS)
 - Download asset `libqsqlmysql-macos-qt6.9.3.zip` from release v1.0.0.
 - Unzip and place `libqsqlmysql.dylib` into `checkinadmin.app/Contents/PlugIns/sqldrivers/`

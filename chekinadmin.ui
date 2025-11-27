@@ -43,7 +43,7 @@
        </rect>
       </property>
       <property name="title">
-       <string>Persona responsable</string>
+       <string>User</string>
       </property>
       <widget class="QLineEdit" name="nombrelineEdit">
        <property name="geometry">
@@ -68,7 +68,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Nombre(s):</string>
+        <string>First name:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -81,10 +81,10 @@
          <y>90</y>
          <width>91</width>
          <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Apellido(s):</string>
+       </rect>
+      </property>
+      <property name="text">
+        <string>Last name:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -112,8 +112,8 @@
          <height>20</height>
         </rect>
        </property>
-       <property name="text">
-        <string>Cedula:</string>
+      <property name="text">
+        <string>User ID:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -141,8 +141,8 @@
          <height>27</height>
         </rect>
        </property>
-       <property name="text">
-        <string>Guardar responsable</string>
+      <property name="text">
+        <string>Save user</string>
        </property>
       </widget>
       <widget class="QPushButton" name="limpiarPpushButton">
@@ -154,8 +154,8 @@
          <height>27</height>
         </rect>
        </property>
-       <property name="text">
-        <string>Limpiar</string>
+      <property name="text">
+        <string>Clear</string>
        </property>
       </widget>
       <widget class="QLabel" name="errorCedula">
@@ -168,7 +168,7 @@
         </rect>
        </property>
        <property name="palette">
-        <palette>
+       <palette>
          <active>
           <colorrole role="WindowText">
            <brush brushstyle="SolidPattern">
@@ -230,10 +230,10 @@
           </colorrole>
          </disabled>
         </palette>
-       </property>
-       <property name="text">
-        <string>*La Cedula es requerida</string>
-       </property>
+      </property>
+      <property name="text">
+        <string>*User ID is required</string>
+      </property>
       </widget>
      </widget>
      <widget class="QGroupBox" name="equipogroupBox">
@@ -419,7 +419,7 @@
      </attribute>
      <widget class="QGroupBox" name="groupBox_3">
       <property name="geometry">
-       <rect>
+      <rect>
         <x>10</x>
         <y>10</y>
         <width>571</width>
@@ -427,7 +427,7 @@
        </rect>
       </property>
       <property name="title">
-       <string>Persona responsable</string>
+       <string>User</string>
       </property>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
@@ -437,9 +437,9 @@
          <width>60</width>
          <height>17</height>
         </rect>
-       </property>
-       <property name="text">
-        <string>Cedula:</string>
+      </property>
+      <property name="text">
+        <string>User ID:</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="cedulaBlineEdit">

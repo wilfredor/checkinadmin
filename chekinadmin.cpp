@@ -117,13 +117,13 @@ void chekinadmin::on_addButton_clicked()
 {
 
         QSqlQuery qry;
-        qry.prepare("INSERT INTO items VALUES (:serial, :tipo, :marca,:modelo,:salio,:responsable)");
+        qry.prepare("INSERT INTO items (serial, item_type, brand, model, checked_out, user_id) VALUES (:serial, :item_type, :brand, :model, :checked_out, :user_id)");
         qry.bindValue(":serial",ui->seriallineEdit->text());
-        qry.bindValue(":tipo",ui->tipocomboBox->currentText());
-        qry.bindValue(":marca",ui->marcalineEdit->text());
-        qry.bindValue(":modelo",ui->modelolineEdit->text());
-        qry.bindValue(":salio",0);
-        qry.bindValue(":responsable",ui->cedulalineEdit->text());
+        qry.bindValue(":item_type",ui->tipocomboBox->currentText());
+        qry.bindValue(":brand",ui->marcalineEdit->text());
+        qry.bindValue(":model",ui->modelolineEdit->text());
+        qry.bindValue(":checked_out",0);
+        qry.bindValue(":user_id",ui->cedulalineEdit->text());
         if(!qry.exec())
          qDebug()<<qry.lastError().text();
 
@@ -139,7 +139,7 @@ void chekinadmin::on_pushButton_clicked()
     if (ui->cedulalineEdit->text().isEmpty())
     {
         QMessageBox msgBox;
-        msgBox.setText("El campo Cedula es necesario");
+        msgBox.setText("User ID is required");
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -148,10 +148,10 @@ void chekinadmin::on_pushButton_clicked()
     {
         QSqlQuery qry;
 
-        qry.prepare("INSERT INTO personas VALUES (:cedula, :nombre, :apellido)");
-        qry.bindValue(":cedula",ui->cedulalineEdit->text());
-        qry.bindValue(":nombre",ui->nombrelineEdit->text());
-        qry.bindValue(":apellido",ui->apellidolineEdit->text());
+        qry.prepare("INSERT INTO users (user_id, first_name, last_name) VALUES (:user_id, :first_name, :last_name)");
+        qry.bindValue(":user_id",ui->cedulalineEdit->text());
+        qry.bindValue(":first_name",ui->nombrelineEdit->text());
+        qry.bindValue(":last_name",ui->apellidolineEdit->text());
 
         if(qry.exec())
         {
@@ -188,12 +188,12 @@ void chekinadmin::on_cedulaBlineEdit_returnPressed()
 
    QSqlTableModel *m = new QSqlTableModel();
         m->setTable("items");
-        m->setFilter("responsable="+ui->cedulaBlineEdit->text());
+        m->setFilter("user_id="+ui->cedulaBlineEdit->text());
         m->setEditStrategy(QSqlTableModel::OnFieldChange);
         m->select();
         CheckableSortFilterProxyModel *cfpm = new CheckableSortFilterProxyModel(this);
             QList<int> boolCols;
-            boolCols.append( m->fieldIndex("salio") );
+            boolCols.append( m->fieldIndex("checked_out") );
             cfpm->setParameters(boolCols);
             cfpm->setSourceModel( m );
             ui->tableView->setModel(cfpm);
@@ -203,11 +203,11 @@ void chekinadmin::on_cedulaBlineEdit_returnPressed()
         qDebug() << m->query().lastError();
 
 
-        QSqlQuery query("SELECT nombre,apellido FROM personas where cedula="+ui->cedulaBlineEdit->text());
+        QSqlQuery query("SELECT first_name,last_name FROM users where user_id="+ui->cedulaBlineEdit->text());
         if (query.next())
         {
-            ui->nombrelabel->setText("Nombre(s): "+ query.value(0).toString());
-            ui->apellidolabel->setText("Apellido(s): "+ query.value(1).toString());
+            ui->nombrelabel->setText("First name: "+ query.value(0).toString());
+            ui->apellidolabel->setText("Last name: "+ query.value(1).toString());
             ui->apellidolabel->show();
             ui->nombrelabel->show();
         }
@@ -218,7 +218,7 @@ void chekinadmin::on_cedulaBlineEdit_returnPressed()
 void chekinadmin::on_cedulalineEdit_returnPressed()
 {
 
-        QSqlQuery query("SELECT nombre,apellido FROM personas where cedula="+ui->cedulalineEdit->text());
+        QSqlQuery query("SELECT first_name,last_name FROM users where user_id="+ui->cedulalineEdit->text());
         if (query.next())
         {
             ui->nombrelineEdit->setText(query.value(0).toString());

@@ -33,9 +33,9 @@ static bool createConnection()
 
   //Crea la tabla prueba
   QSqlQuery query;
-  query.exec("CREATE TABLE  IF NOT EXISTS personas (cedula INT PRIMARY KEY, nombre VARCHAR(50), apellido VARCHAR(50))");
-  query.exec("CREATE TABLE  IF NOT EXISTS items (serial varchar(50), tipo varchar(50), marca varchar(50), modelo varchar(50),salio int, responsable int)");
-  query.exec("CREATE TABLE  IF NOT EXISTS events (descripcion varchar(50), hora varchar(25))");
+  query.exec("CREATE TABLE  IF NOT EXISTS users (user_id INT PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50))");
+  query.exec("CREATE TABLE  IF NOT EXISTS items (serial varchar(50) PRIMARY KEY, item_type varchar(50), brand varchar(50), model varchar(50), checked_out int, user_id int, KEY idx_user_id (user_id), CONSTRAINT fk_items_users FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL ON UPDATE CASCADE)");
+  query.exec("CREATE TABLE  IF NOT EXISTS events (description varchar(50), timestamp varchar(25))");
 
   qDebug() << query.lastError();
 
