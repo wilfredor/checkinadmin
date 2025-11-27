@@ -1,0 +1,62 @@
+# Qt build outputs
+build/
+*.app/
+*.app
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.o
+*.obj
+*.pch
+*.ilk
+*.dSYM/
+*.log
+*.tmp
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+
+# qmake / Qt Creator
+*.pro.user
+*.pro.user.*
+.qmake.stash
+Makefile
+*.pri~
+*.qmlc
+*.jsc
+
+# CMake (por si se usa)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+*.ninja
+.ninja_deps
+.ninja_log
+
+# Descargas locales / SDKs / assets empaquetados
+qtbase-everywhere-src*/
+**/qtbase-everywhere-src*/
+qtbase-everywhere-src-*/
+**/qtbase-everywhere-src-*/
+qtbase-*/
+**/qtbase-*/
+*.tar
+*.tar.*
+*.zip
+libqsqlmysql-*.zip
+
+# Binarios auxiliares generados por Qt sources
+bin/
+**/bin/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
